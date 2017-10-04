@@ -1,0 +1,31 @@
+<div class="container">
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th><h3 style="color: white">Act Req. Id</h3></th>
+                    <th><h3 style="color: white">Source</h3></th>
+                    <th><h3 style="color: white">Date</h3></th>
+                    <th><h3 style="color: white">Location</h3></th>
+                    <th><h3 style="color: white">Priority</h3></th>
+                    <th><h3 style="color: white">Contact</h3></th>
+                    <th><h3 style="color: white">Phone</h3></th>
+                    <th><h3 style="color: white">Problem Description</h3></th>
+                    <th><h3 style="color: white">Status</h3></th>
+                  </tr>
+                </thead>
+                <tbody>
+                   <tr *ngFor="let val of actRequestId; let i = index;" class="hov">
+                     <td style="color: white;size: 20px;">{{actRequestId[i]}}</td>
+                     <td style="color: white;size: 20px;">{{source[i]}}</td>
+                     <td style="color: white;size: 20px;">{{date[i]}}</td>
+                     <td style="color: white;size: 20px;">{{location[i]}}</td>
+                     <td style="color: white;size: 20px;">{{priority[i]}}</td>
+                     <td style="color: white;size: 20px;">{{contact[i]}}</td>
+                     <td style="color: white;size: 20px;">{{phone[i]}}</td>
+                     <td style="color: white;size: 20px;">{{problemDescription[i]}}</td>
+                     <td style="color: white;size: 20px;">{{status[i]}}</td>
+                   </tr>
+                </tbody>
+              </table>
+
+</div>

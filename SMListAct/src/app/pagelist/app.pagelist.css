@@ -1,0 +1,12 @@
+.listheading{
+    color: white;
+}
+ul.a{
+    list-style: none;
+    color: white;
+    font-size: 17px;
+}
+
+tr.hov:hover{
+    background-color: #E85CB4;
+}
