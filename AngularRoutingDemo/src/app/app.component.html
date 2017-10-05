@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>HOME<span class="glyphicon glyphicon-home" aria-hidden="true"></span></h1>
+          </div>
+          <div class="col-sm-6">
+             <a [routerLink]="['/about']">About</a>
+             <a [routerLink]="['/register']">Register</a>
+          </div>
+          <div class="outer-outlet"></div>
+          <router-outlet></router-outlet>
+    </div>
+  </div>
+
