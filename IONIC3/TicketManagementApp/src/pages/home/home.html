@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2 class="headerColor">Ticket Booking Zone</h2>
+
+  <ion-list>
+    <!-- <form [formGroup]="bookingForm"> -->
+    <ion-item>
+      <ion-label floating>Passenger Name</ion-label>
+      <ion-input type="text" required id="passengerName" name="passengerName" [(ngModel)]="model.passengerName" clearInput></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Source Station</ion-label>
+      <ion-input type="text" required id="sourceStation" name="sourceStation" [(ngModel)]="model.sourceStation" clearInput></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Date of Journey</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" required name="bookingDate" id="bookingDate" [(ngModel)]="model.bookingDate"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Destination</ion-label>
+      <ion-input type="text" required id="destination" name="destination" [(ngModel)]="model.destination" clearInput></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="email" required id="email" name="email" [(ngModel)]="model.email" clearInput></ion-input>
+    </ion-item>
+    <button ion-button icon-right type="submit" (click)="booTicket()">
+      Book My Ticket
+      <ion-icon name="train"></ion-icon>
+    </button>
+    <!-- </form> -->
+    <button ion-button icon-right (click)="checkTicketPrompt()">
+      Check Your Ticket
+      <ion-icon name="checkmark-circle"></ion-icon>
+    </button>
+  </ion-list>
+
+  <ion-card *ngIf="showBookedTicket">
+    <ion-card-header style="color:red">
+      Your Booked Ticket
+    </ion-card-header>
+    <ion-card-content>
+      <table class="ticketDisplayProperty">
+        <tr class="ticketDisplayProperty">
+          <th>Id</th>
+          <th>Name</th>
+          <th>DOJ</th>
+          <th>Source St.</th>
+          <th>Destination</th>
+          <th>Email</th>
+        </tr>
+        <tr>
+          <td>{{myDetails.ticketId}}</td>
+          <td>{{myDetails.passengerName}}</td>
+          <td>{{myDetails.bookingDate | date}}</td>
+          <td>{{myDetails.sourceStation}}</td>
+          <td>{{myDetails.destination}}</td>
+          <td>{{myDetails.email}}</td>
+        </tr>
+      </table>
+      <button ion-button color="secondary" (click)="closeDisplayTicket()">Close</button>
+      <button ion-button color="danger" (click)="askConfirmDelete()">DELETE</button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
