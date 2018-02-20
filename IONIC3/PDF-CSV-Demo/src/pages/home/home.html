@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Demo Application on PDF and CSV
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!-- <button ion-button icon-right (click)="getEmployees()">
+    Check Your Ticket
+    <ion-icon name="checkmark-circle"></ion-icon>
+  </button> -->
+  <table id="employeeTable" #employeeTable>
+    <thead>
+      <tr>
+        <th>
+          <h3 style="color: black;size: 25px;">User Id</h3>
+        </th>
+        <th>
+          <h3 style="color: black;size: 25px;">Job Title</h3>
+        </th>
+        <th>
+          <h3 style="color: black;size: 25px;">First Name</h3>
+        </th>
+        <th>
+          <h3 style="color: black;size: 25px;">Last Name</h3>
+        </th>
+        <th>
+          <h3 style="color: black;size: 25px;">Full Name</h3>
+        </th>
+        <th>
+          <h3 style="color: black;size: 25px;">Employee Code</h3>
+        </th>
+        <th>
+          <h3 style="color: black;size: 25px;">Region</h3>
+        </th>
+        <th>
+          <h3 style="color: black;size: 25px;">Phone Number</h3>
+        </th>
+        <th>
+          <h3 style="color: black;size: 25px;">Email Address</h3>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let val of userId; let i = index;" class="hov">
+        <td style="color: black;size: 20px;">{{userId[i]}}</td>
+        <td style="color: black;size: 20px;">{{jobTitleName[i]}}</td>
+        <td style="color: black;size: 20px;">{{firstName[i]}}</td>
+        <td style="color: black;size: 20px;">{{lastName[i]}}</td>
+        <td style="color: black;size: 20px;">{{preferredFullName[i]}}</td>
+        <td style="color: black;size: 20px;">{{employeeCode[i]}}</td>
+        <td style="color: black;size: 20px;">{{region[i]}}</td>
+        <td style="color: black;size: 20px;">{{phoneNumber[i]}}</td>
+        <td style="color: black;size: 20px;">{{emailAddress[i]}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <button ion-button color="secondary" (click)='convertJsonDataToCsv()'>Save As CSV</button>
+  <button ion-button color="secondary" (click)='saveAsPdf()'>Save As PDF</button>
+
+
+</ion-content>
