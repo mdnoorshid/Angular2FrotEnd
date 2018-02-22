@@ -1,0 +1,12 @@
+
+<ion-content padding>
+  <p *ngIf="employee">{{employee.name}}
+    {{employee.designation}}
+    {{employee.experience}}
+  </p>
+ <div><h1>Parent Title</h1></div>
+
+ <page-child-component (notify)="onNotifyClicked($event)">
+ </page-child-component>
+ 
+</ion-content>
