@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Parent Component
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <child-page [message]="parentMessage" ></child-page>
+  <p>Message from child <span style="color:green">{{childMessage}}</span></p>
+  <p>Message from child through dataservice <span style="color:coral">{{messageFromDataService}}</span></p>
+
+
+</ion-content>
