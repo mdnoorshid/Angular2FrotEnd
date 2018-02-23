@@ -1,0 +1,104 @@
+<!--
+  Generated template for the PopOverPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar *ngIf="showNavbar">
+    <ion-title>PopOver-Form Demo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <!-- Filters -->
+ <div class="row row-filters">
+    <a class="close-filter-xs js-close-filter-xs visible-xs"><i class="fa fa-remove icon close-icon"></i></a>
+    <div class="col-sm-12 no-left-padd-xs no-right-padd-xs">
+      <div class="form-group form-group-filters">
+        <div class="col-left">
+          <label class="label-filter">
+            <i class="fa fa-filter filter-icon"></i> Filter
+          </label>
+          <div class="box-bordered">
+            <select class="fields js-selectpicker" id="fieldsSel">
+              <option>Fields</option>
+              <option>a</option>
+              <option>b</option>
+              <option>c</option>
+            </select>
+            <select class="equals js-selectpicker" id="equalsSel">
+              <option>=</option>
+              <option>a</option>
+              <option>b</option>
+              <option>c</option>
+            </select>
+            <input type="text" class="form-control" placeholder="value" id="inpTxt"> 
+            <button class="btn btn-primary btn-apply">Apply</button>
+            <button class="btn btn-primary btn-add-more js-btn-add-more">Add More</button>
+          </div>
+        </div>
+        <div class="col-right hidden-xs">
+          <button class="btn btn-filled-outlined btn-refresh"><i class="fa fa-refresh col-right-icon"></i></button>
+          <button class="btn btn-filled-outlined btn-print"><i class="fa fa-print col-right-icon"></i></button>
+          <div class="btn-group btn-group-filter-col-right">
+            <button type="button" class="btn btn-filled-outlined btn-download dropdown-toggle js-btn-download" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-download col-right-icon"></i> <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu pull-right">
+              <li><a href="#"><i class="fa fa-file-text-o"></i> Download as CSV</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#"><i class="fa fa-file-pdf-o"></i> Download as CSV</a></li>
+            </ul>
+          </div>
+          <div class="btn-group btn-group-filter-col-right js-btn-group-setting">
+            <button type="button" class="btn btn-filled-outlined btn-setting dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-gear col-right-icon"></i> <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-setting pull-right">
+              <li class="li-auto-refresh">
+                <div class="label-control">Auto Refresh</div>
+                <div class="switch switch-sm">
+                  <input type="checkbox" checked="checked">
+                  <span></span>                    
+                </div>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li class="li-set-time">
+                <div class="label-control">Set Time</div>
+                <select class="set-time js-select-set-time">
+                  <option>30 Seconds</option>
+                  <option>a</option>
+                  <option>b</option>
+                  <option>c</option>
+                </select>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <!-- /Filters -->
+
+  <form #form="ngForm" (ngSubmit)="logForm(form)" novalidate>
+    <ion-item>
+      <ion-label floating>First Name</ion-label>
+      <ion-input type="text" required [(ngModel)]="popOverFormVal.firstName" name="firstName" ngControl="firstName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Last Name</ion-label>
+      <ion-input type="text" required [(ngModel)]="popOverFormVal.lastName" name="lastName" ngControl="lastName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Designation</ion-label>
+      <ion-input type="text" required [(ngModel)]="popOverFormVal.designation" name="designation"  ngControl="designation"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" block>Submit</button>
+  </form>
+</ion-content>

@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Pop Over Demonstration
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button *ngIf="showPopOverBtn" (click)="presentPopOver($event)"><span style="color: lightskyblue"><ion-icon name="menu"></ion-icon></span></button>
+    </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>This project is to demonstrate popover component</h1>
+  <page-pop-over [showNavbar]="showPopOverBtn" *ngIf="!showPopOverBtn"></page-pop-over>
+</ion-content>

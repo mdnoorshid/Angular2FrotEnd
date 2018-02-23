@@ -1,0 +1,201 @@
+@import 'fonts';
+@import 'helper';
+@import 'colors';
+@import 'variables';
+
+.form-horizontal {
+	label, .control-label {
+		font-size: 0.9375em;
+		font-weight: 400;
+	}
+	.control-label {
+		text-align: right;
+	}
+	@media (max-width: 767px) {
+		.radio-inline,
+		.checkbox-inline {
+			display: block;
+		}
+		.radio-inline + .radio-inline,
+		.checkbox-inline + .checkbox-inline {
+			margin-left: 0;
+		}
+	}
+}
+
+.has-error {	
+	.help-block, .form-control {
+		color: $color_alert;
+	}
+	.help-block {
+		font-size: 0.6875em;
+	}
+	.form-control {
+		border-color: $color_alert;
+	}
+	label, .control-label {
+		color: $color_primary;
+	}
+}
+
+.form-group {
+	@media (max-width: 767px) {
+		float: none;
+		width: auto;
+	}
+	&.form-group-search {
+		position: relative;
+		.search-icon {
+			position: absolute;
+			top: 0;
+			right: 1em;
+			bottom: 0;
+			height: 1em;
+			margin: auto;
+		}
+	}
+	&.has-icon-inside-input-field {
+		position: relative;
+		.input-field-icon {
+			position: absolute;
+			top: 0;
+			right: 20px;
+			bottom: 0;
+			height: 1em;
+			margin: auto;			
+		}
+		.form-control {
+			//width: 90%;
+			padding-right: 22px;
+		}
+	}
+	&.has-icon {
+		position: relative;
+		.input-field-icon {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			height: 1em;
+			margin: auto;			
+		}
+		.form-control {
+			width: 90%;
+		}
+	}
+}
+
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+	width: 100%;
+	.btn-select-field {
+		background: $color_mono_3;
+		border: 1px solid $color_mono_4;
+		padding-right: $right_spacing_btn_select_field;
+	}
+	.bs-caret {
+		background: $color_primary;
+		width: $right_spacing_btn_select_field;
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
+	&.btn-group {
+		.dropdown-toggle {
+			.caret {
+				color: $color_white;
+			}
+		}
+		&.open .dropdown-toggle {
+			@include box-shadow(none);
+		}
+	}
+}
+
+.form-control {
+	background: $color_mono_3;
+	border: 1px solid $color_mono_4;
+	font-size: 0.9375em;
+	height: 2.266666666666667em;
+}
+
+.select2-container {
+  width: 100% !important;
+	&.select2-container--default {
+		.select2-selection--single {
+			@include border-radius(3px);
+			border: 1px solid $color_mono_4;
+			background-color: $color_mono_3;
+			font-size: 1em;
+			height: 2.125em;
+			.select2-selection__rendered {
+				line-height: 2.2;
+				font-size: 0.9375em;
+				color: $color_primary;
+				padding-right: 30px;
+			}
+			.select2-selection__arrow {
+				height: 2em;
+				background-color: $color_primary;
+				width: 30px;
+				b {
+					border-color: $color_white transparent transparent transparent;
+				}
+			}
+		}
+		.select2-search--inline {
+			.select2-search__field {
+				width: auto !important;				
+				font-size: 1.16666em;
+			}			
+		}
+		.select2-selection--multiple {
+			@include border-radius(0);
+			background-color: transparent;
+			border: 0;
+			.select2-selection__rendered {
+				li {
+					width: auto;
+					font-size: 0.75em;
+				}	
+			}
+			.select2-selection__choice {
+				background-color: $color_white;
+				border: 1px solid $color_mono_4;
+				@include border-radius(0);
+			}
+			.select2-selection__choice__remove {
+		    float: right;
+		    margin-right: 0;
+		    margin-left: 25px;
+		    font-weight: 700;
+		    font-size: 1.2em;
+		    border: 1px solid $color_mono_4;
+		    height: 0.9em;
+		    line-height: 0.626;
+		    margin-top: 3.9px;
+		    text-align: center;
+		    width: 0.834em;
+			}
+		}
+		.select2-results__option {
+			font-size: 0.75em;
+			color: $color_primary;
+			&[aria-selected=true] {
+				background-color: $color_mono_3;				
+			}
+			&.select2-results__option--highlighted[aria-selected] {
+				background-color: $color_primary;
+				color: $color_white;
+			}
+		}
+		&.select2-container--open .select2-selection--single .select2-selection__arrow b {
+			border-color: transparent transparent $color_white transparent;
+		}
+	}
+}
+
+.select2-dropdown {
+	@include border-radius(0);
+	border: 1px solid $color_mono_4;
+}
