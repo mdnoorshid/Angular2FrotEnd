@@ -1,0 +1,46 @@
+page-home {
+
+}
+
+.title.title-md {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.bar .title {
+    font-size:1px;
+}
+
+.divFilter{
+    border: 2px solid #f1ebeb;
+    width: 127px;
+    height: 46px;
+}
+
+.divParaFilter{
+    text-align: center;
+    color: cadetblue;
+    margin-top: -19px;
+}
+
+.divCloseDiv{
+    text-align: right;  
+    margin-top: -1px;
+    margin-right: 1px;
+}
+
+.mainDivFilter{
+    border: 2px solid lightgrey;
+    width: 487px;
+    height: auto; 
+}
+
+.closeDivMainFilter{
+    text-align: right;  
+    margin-top: -1px;
+    margin-right: 1px;
+}

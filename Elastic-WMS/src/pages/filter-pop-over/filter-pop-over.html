@@ -1,0 +1,89 @@
+<!--
+  Generated template for the FilterPopOverPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content padding>
+
+
+  <ion-grid>
+    <ion-row >
+          <ion-col col-xs-1>
+            <p>
+              <ion-icon name="funnel"> Filter</ion-icon>
+              <!-- <ion-label>Filter</ion-label> -->
+              </p>
+              <!-- <p style="text-align: left"> -->
+              <!-- </p> -->
+            </ion-col>
+            <!-- <ion-col col-xs-1> -->
+            <!-- </ion-col> -->
+          </ion-row>
+        <ion-row>
+          <ion-col col-xs-4>
+            <ion-item>
+              <ion-label>Fields</ion-label>
+              <ion-select [(ngModel)]="toppings.field">
+                <ion-option>A</ion-option>
+                <ion-option>B</ion-option>
+                <ion-option>C</ion-option>
+                <ion-option>D</ion-option>
+                <ion-option>E</ion-option>
+                <ion-option>F</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+          <ion-col col-xs-4>
+            <ion-item>
+              <ion-select [(ngModel)]="toppings.operator">
+                <ion-option>=</ion-option>
+                <ion-option>></ion-option>
+                <ion-option><</ion-option>
+                <ion-option>>=</ion-option>
+                <ion-option><=</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+
+          <ion-col col-xs-3>
+            <ion-item>
+              <!-- <ion-label color="primary" stacked>Value</ion-label> -->
+              <ion-input type="text" placeholder="Value" [(ngModel)]="toppings.value"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+          <ion-row>
+          <ion-col col-xs-1>
+            <button ion-button color="dark">
+              Apply
+            </button>
+          </ion-col>
+          <ion-col col-xs-1>
+            <button ion-button color="dark" (click)="addMore()">
+              Add More
+            </button>
+          </ion-col>
+        </ion-row>
+
+
+      <ion-row>
+        <ion-col col-xs-1>
+        </ion-col>
+        <ion-col col-xs-10>
+          <div class="mainDivFilter" *ngIf="showFilterDiv && showMainFilterLocalDiv">
+            <p class="closeDivMainFilter">
+              <!-- <ion-icon name="close-circle" (click)="closeMainDivFilter()"></ion-icon> -->
+              <ion-icon name="close" (click)="closeMainDivFilter()"></ion-icon>
+            </p>
+            <page-fiter-div (showFilterDivChild)="closeMainFilterDivBasedOnChild($event)" [toppingsArr]="toppingArr" [showFilterDiv]="showFilterDiv"
+              style="margin-top: 15px"></page-fiter-div>
+          </div>
+        </ion-col>
+      </ion-row>
+
+  </ion-grid>
+
+</ion-content>
