@@ -1,20 +1,10 @@
-<!--
-  Generated template for the FiterDivPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-grid>
-  <ion-row>
-    <ion-col col-2>
-      <div  *ngFor="let item of toppingsArr; let i = index">
-        <div class=" divFilter"  *ngIf="(showFilterDiv && toppingsArr[i].field && toppingsArr[i].operator && toppingsArr[i].value )">
-          <p class="divCloseDiv">
-            <ion-icon name="close-circle" (click)="closeDivFilter(i)"></ion-icon>
-          </p>
-          <p class="divParaFilter">{{toppingsArr[i].field}} {{toppingsArr[i].operator}} {{toppingsArr[i].value}}</p>
-        </div>
-      </div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+<div class="divLoopFilter">
+  <div *ngFor="let item of toppingsArr; let i = index">
+    <div class="divFilter" *ngIf="(showFilterDiv && toppingsArr[i].field && toppingsArr[i].operator && toppingsArr[i].value )">
+      <p class="divCloseDiv">
+        <ion-icon name="close-circle" (click)="closeDivFilter(i)"></ion-icon>
+      </p>
+      <p class="divParaFilter">{{toppingsArr[i].field}} {{toppingsArr[i].operator}} {{toppingsArr[i].value}}</p>
+    </div>
+  </div>
+</div>

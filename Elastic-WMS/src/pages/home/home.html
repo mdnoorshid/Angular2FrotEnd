@@ -5,6 +5,9 @@
       <ion-icon name="menu"></ion-icon>
     </button>
 
+    <!--Based on type of device button is controlling
+        For desktop apllication showPopOverBtn is false
+    -->
     <ion-buttons *ngIf="showPopOverBtn" (click)="presentPopOver($event)" end>
       <button type="button" class="customBtn">
         <ion-icon name="funnel"></ion-icon>
@@ -12,7 +15,7 @@
     </ion-buttons>
 
     <ion-title>
-      ELASTIC WMS APPLICATION DEMO
+    ELASTIC WMS
     </ion-title>
 
   </ion-navbar>
@@ -116,7 +119,7 @@
       <ion-col col-10>
         <div class="mainDivFilter" *ngIf="showFilterDiv && showMainFilterLocalDiv">
             <p class="closeDivMainFilter">
-                <ion-icon name="close-circle" (click)="closeMainDivFilter()"></ion-icon>
+                <ion-icon name="close"  (click)="closeMainDivFilter()"></ion-icon>
               </p>
           <ion-row>
              <ion-col col-2>
@@ -128,8 +131,6 @@
     </ion-row>
 
   </ion-grid>
-
-
 </ion-content>
 
 <ion-footer>

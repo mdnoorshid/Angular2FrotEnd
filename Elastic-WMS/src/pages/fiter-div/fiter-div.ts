@@ -39,12 +39,7 @@ export class FiterDivPage {
       console.log("emitting value showFilterDiv");
       this.showFilterDivChild.emit((this.showFilterDiv==false));
     }
-
-
-  }
-
-  openDivFilter() {
-    this.showFilterDiv = true;
+    console.log("ToppingsArr after removing filter object:: "+JSON.stringify(this.toppingsArr));
   }
 
 }
